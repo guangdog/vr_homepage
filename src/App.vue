@@ -12,7 +12,7 @@ export default {
 
 <style>
 #app {
-  font: 12px/1.5 'Î¢ÈíÑÅºÚ',Tahoma,Helvetica,'SimSun',sans-serif;
+  font: 12px/1.5 'å¾®è½¯é›…é»‘',Tahoma,Helvetica,'SimSun',sans-serif;
   color: #666;
 }
 *{
@@ -24,5 +24,8 @@ ul{
 }
 a{
   text-decoration: none;
+}
+body {
+  background: #F5F5F5;
 }
 </style>
