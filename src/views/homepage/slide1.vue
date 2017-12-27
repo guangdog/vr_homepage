@@ -2,7 +2,6 @@
 	<div>
 		<div class="main">
 	  	<div class="left">
-	  		<!--左边slide-->
 	  		<div class="tab">
 	  			<p style="height: 35px;line-height: 35px;">	
 	  				<a><img src="../../static/images/homepage/tab1.png"/>最新</a>    <a><img src="../../static/images/homepage/tab2.png"/>AR增强实现</a>    <a><img src="../../static/images/homepage/tab3.png"/>VR硬件</a>    <a><img src="../../static/images/homepage/tab4.png"/>虚幻UE4</a>
@@ -31,8 +30,8 @@
 	  			<a>最新资讯</a>
 	  		</div>
 	
-	  			<ul class="weekly-list" v-for="data in arr" style="	list-style: outside;">
-	  				<li style="height: 50px;line-height: 50px; display: list-item;list-style-type: square;">
+	  			<ul class="weekly-list" v-for="(data,index) in arr">
+	  				<li style="height: 50px;line-height: 50px; list-style-type: square;">
 							<div class="app-show-title">
 								<a>{{data.title}}</a>  
 							</div>		
@@ -43,8 +42,8 @@
 	  			<a>最新讨论</a>
 	  		</div>
 				
-					<ul class="weekly-list2" v-for="data in arr" style="	list-style: outside;">
-	  				<li style="height: 50px;line-height: 50px; display: list-item;list-style-type: square;">
+					<ul class="weekly-list2" v-for="(data,index) in arr" >
+	  				<li style="height: 50px;line-height: 50px; list-style-type: square;">
 							<div class="app-show-title">
 								<a>{{data.title}}</a>  
 							</div>		
@@ -99,23 +98,18 @@ export default {
 }
 </script>
 <style scoped>
-		
-		
-	
-	
 		.main{
 			width: 1190px;
-			/*height: 1800px;*/
-			/*background: green;*/
 			display: flex;
 			justify-content: space-between;
 			margin: 0 auto;
-			border-bottom: 2px solid #F5F5F5;
+			background: white;
+			padding-bottom: 20px;
+			box-sizing: border-box;
+			border: 1px solid #EEE;
 		}
 		.main .tab{
 			width: 825px;
-			height: 1366px;
-			background: ;
 			margin-top: 5px;
 		}
 		.main .tab p{
@@ -124,8 +118,6 @@ export default {
 		.main .tab p a{
 			width: 90px;
 			height: 35px;
-			
-		/*	margin-left: 20px;*/
 		}
 		.main .tab p a:hover{
 			border-bottom: 2px solid #4691F3;
@@ -133,23 +125,15 @@ export default {
 		}
 		.main .left{
 			width: 825px;
-			height: 1430px;
-			float: left;
 			background: white;
 		}
 		.main .right{
-			width: 330px;
-			height: 1430px;
-			float: left;
+			width: 360px;
 			background: white;
 		}
-		
-		
 		.slide1{
 			width: 788px;
 			height: 166px;
-			background: ;
-			/*border: 1px solid firebrick;*/
 			padding: 10px;
 		}
 		.slide1:hover{
@@ -169,7 +153,6 @@ export default {
 			background: white;
 		}
 		.slide-right p{
-			background: ;
 			height: 166px;
 			line-height: 166px;
 		}
@@ -177,11 +160,8 @@ export default {
 			width: 219px;
 			height: 150px;
 		}
-		
-		
-		 .qtag {
+		.qtag {
 	    color: #B6B6B6;
-	    /*display: inline-block;*/
 	    border: 1px solid #E3E3E3;
 	    float: left;
 	    width: 74px;
@@ -196,15 +176,6 @@ export default {
 			color: white;
 			border: 1px solid red;
 		}
-		
-		
-		
-	
-		
-		
-		
-		
-		
 		.qhead_tit {
 	    margin-top: 20px;
 	    padding-left: 10px;
@@ -215,32 +186,33 @@ export default {
 	    color: #222;
 		}
 		.right ul{
-			padding: 0px 0px 0px 28px;
+			box-sizing: border-box;
+			padding: 0px 28px;
 		}
 		.right ul li{
-			width: 310px;
+			padding-left: 5%; 
+			width: 90%;
 			height: 40px;
-		  padding: 10px;
+			list-style-position:inside;
 		  list-style-type: square;
-		  margin-left:10px ;
 		  color: red;
-		  text-indent:-10px;
 		  padding: 5px 5px;
 		}
-		li>div{
-			color: black;
-		} 
 		.weekly-list li .app-show-title {
 	    font-size: 14px;
+			padding: 0 10px; 
 		}
 		.weekly-list2 li:hover{
-			color: blue;
-			width: 310px;
 			height: 40px;
 			background: #F5F5F5;
 		}
-		
-		
+		.weekly-list2 li:hover a{
+			color: blue;
+		}
+		li>div{
+			display: inline-block;
+			color: black;
+		} 
 		.bottom{
 			width: 1189px;
 			height: 100px;
@@ -259,7 +231,6 @@ export default {
 			margin-left: 5%;
 			margin-top: 10%;
 		}
-		
 		.enlarge{
 			width: 1188px;
 			height: 498px;
@@ -271,13 +242,10 @@ export default {
 			overflow: hidden;
 		}
 		.enlarge div{
+			overflow: hidden;
 			width: 260px;
 			height:170px;
-			background: ;
-			/*border: 1px solid yellow;*/
-			padding:20px 5px 10px 5px;
-			margin-left: 20px;
-			margin-top: 20px;
+			margin: 40px 5px 10px 25px;
 		}
 		.enlarge div img{
 			width: 100%;
@@ -286,6 +254,6 @@ export default {
       		transition: all 0.6s;  
 		}
 		.enlarge div img:hover{  
-     		 transform: scale(1.4);  
-   		 }
+			transform: scale(1.4);  
+		}
 </style>
