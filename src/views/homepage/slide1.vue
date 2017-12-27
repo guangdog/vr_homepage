@@ -4,7 +4,7 @@
 	  	<div class="left">
 	  		<div class="tab">
 	  			<p style="height: 35px;line-height: 35px;">	
-	  				<a><img src="../../static/images/homepage/tab1.png"/>最新</a>    <a><img src="../../static/images/homepage/tab2.png"/>AR增强实现</a>    <a><img src="../../static/images/homepage/tab3.png"/>VR硬件</a>    <a><img src="../../static/images/homepage/tab4.png"/>虚幻UE4</a>
+	  				<a><img src="../../assets/images/homepage/tab1.png"/>最新</a>    <a><img src="../../assets/images/homepage/tab2.png"/>AR增强实现</a>    <a><img src="../../assets/images/homepage/tab3.png"/>VR硬件</a>    <a><img src="../../assets/images/homepage/tab4.png"/>虚幻UE4</a>
 	  			</p>
 		  		<div class="slide1" v-for="data in arr">	
 		  			<div class="slide-left" style="position: relative;">
@@ -56,22 +56,22 @@
 	  </div>
 	  
 	  <div class="bottom">
-	  		<div><img src="../../static/images/homepage/tab5.png"/></div>
-	  		<div><img src="../../static/images/homepage/tab6.png"/></div>
-	  		<div><img src="../../static/images/homepage/tab7.png"/></div>
-	  		<div><img src="../../static/images/homepage/tab8.png"/></div>
-	  		<div><img src="../../static/images/homepage/tab9.png"/></div>
+	  		<div><img src="../../assets/images/homepage/tab5.png"/></div>
+	  		<div><img src="../../assets/images/homepage/tab6.png"/></div>
+	  		<div><img src="../../assets/images/homepage/tab7.png"/></div>
+	  		<div><img src="../../assets/images/homepage/tab8.png"/></div>
+	  		<div><img src="../../assets/images/homepage/tab9.png"/></div>
 	  </div>
 	  
 	  <div class="enlarge">
-			<div><img src="../../static/images/homepage/slide11.png"/></div>
-			<div><img src="../../static/images/homepage/slide12.png"/></div>
-			<div><img src="../../static/images/homepage/slide13.png"/></div>
-			<div><img src="../../static/images/homepage/slide14.png"/></div>
-			<div><img src="../../static/images/homepage/slide15.png"/></div>
-			<div><img src="../../static/images/homepage/slide16.png"/></div>
-			<div><img src="../../static/images/homepage/slide17.png"/></div>
-			<div><img src="../../static/images/homepage/slide18.png"/></div>
+			<div><img src="../../assets/images/homepage/slide11.png"/></div>
+			<div><img src="../../assets/images/homepage/slide12.png"/></div>
+			<div><img src="../../assets/images/homepage/slide13.png"/></div>
+			<div><img src="../../assets/images/homepage/slide14.png"/></div>
+			<div><img src="../../assets/images/homepage/slide15.png"/></div>
+			<div><img src="../../assets/images/homepage/slide16.png"/></div>
+			<div><img src="../../assets/images/homepage/slide17.png"/></div>
+			<div><img src="../../assets/images/homepage/slide18.png"/></div>
    		</div>
 	</div>
   
