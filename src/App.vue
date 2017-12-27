@@ -12,14 +12,17 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font: 12px/1.5 '微软雅黑',Tahoma,Helvetica,'SimSun',sans-serif;
+  color: #666;
 }
 *{
   margin: 0;
   padding: 0;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
 }
 </style>
