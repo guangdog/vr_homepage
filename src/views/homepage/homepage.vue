@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <hometop></hometop>
-	<slide1></slide1>
+	  <slide1></slide1>
   </div>
 </template>
 <script>
@@ -10,7 +10,8 @@ import slide1 from './slide1.vue'
 
 export default {
   components: {
-    hometop£¬slide1
+    hometop,
+    slide1
   }
 }
 </script>
