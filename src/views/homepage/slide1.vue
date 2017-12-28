@@ -30,12 +30,12 @@
 	  			<a>最新资讯</a>
 	  		</div>
 	
-	  			<ul class="weekly-list" v-for="(data,index) in arr">
-	  				<li style=" ">
+	  			<ul class="weekly-list" v-for="(data,index) in arr" @mouseenter="showItem(index)">
+	  				<li style="line-height: 40px; ">
 						<div class="app-show-title" >
 							<p class="head">{{data.title}}</p> 
-							<p style="color: #666;margin-top: 5px;">浏览：{{data.liulan}}<span style="float: right;margin-right: 12px;">{{data.time}}</span></p>
-							<p><img :src="data.img" style="width:220px;height: 80px;margin-top: 5px;" /></p>
+							<p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;">浏览：{{data.liulan}}<span style="float: right;margin-right: 12px;">{{data.time}}</span></p>
+							<p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.img" style="width:220px;height: 120px;margin-top: 5px;" /></p>
 						</div>		
 					</li>
 	  			</ul>
@@ -45,7 +45,7 @@
 		  		</div>
 				
 					<ul class="weekly-list2" v-for="(data,index) in arr" >
-	  				<li style="height: 50px;line-height: 50px; list-style-type: square;">
+	  				<li style="height: 40px;line-height: 40px; list-style-type: square;">
 							<div class="app-show-title">
 								<a>{{data.title}}</a>  
 							</div>		
@@ -90,9 +90,24 @@ export default {
         {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
         {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
         {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'}
-
-      ]
+      ],
+      isShow: []
     }
+  },
+  methods: {
+    showItem (index) {
+      for (let item in this.arr) {
+        this.isShow[item] = false
+      }
+      this.isShow[index] = true
+      this.$forceUpdate()
+    }
+  },
+  created () {
+    for (var i = 0; i < this.arr.length; i++) {
+      this.isShow.push(false)
+    }
+    this.isShow[0] = true
   }
 }
 </script>
@@ -116,6 +131,13 @@ export default {
 }
 .main .tab p{
 	margin-top: 20px;
+}
+.noneshow{
+	transition: all 0.3s;
+	display: none;
+}
+.isShow{
+	display: block;
 }
 .main .tab p a{
 	width: 90px;
@@ -199,24 +221,22 @@ export default {
 .right ul li{
 	padding-left: 5%; 
 	width: 94%;
-	height: 140px;
 	list-style-position:inside;
 	color: red;
 	padding: 5px 5px 5px 5px;
 }
 .weekly-list .app-show-title{
 	width: 84%;
-	height: 110px;
-	padding: 10px 10px 30px 30px;
-	background-position:5% 13%;
+	padding: 0px 10px 0px 30px;
+	background-position: 18px 18px;
 	background-image:url(../../assets/images/homepage/dot.png);
 	background-repeat:no-repeat;
 	/*border: 1px solid green;*/
 }
 .weekly-list .app-show-title:hover{
 	background: #f4f4f4;
-	padding: 10px 10px 30px 30px;
-	background-position:5% 13%;
+	padding: 0px 10px 0px 30px;
+	background-position: 18px 18px;
 	background-image:url(../../assets/images/homepage/dot.png);
 	background-repeat:no-repeat;
 }
