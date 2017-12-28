@@ -4,13 +4,16 @@
       <div class="left">
         <div class="tab">
           <p style="height: 35px;line-height: 35px;">  
-            <a><img src="../../assets/images/homepage/tab1.png"/>最新</a>    <a><img src="../../assets/images/homepage/tab2.png"/>AR增强实现</a>    <a><img src="../../assets/images/homepage/tab3.png"/>VR硬件</a>    <a><img src="../../assets/images/homepage/tab4.png"/>虚幻UE4</a>
+            <a :class="{choose:ischoose[0]}" @mouseenter="infosTypeChoose(0)"><img src="../../assets/images/homepage/tab1.png"/>最新</a>
+            <a :class="{choose:ischoose[1]}" @mouseenter="infosTypeChoose(1)"><img src="../../assets/images/homepage/tab2.png"/>AR增强实现</a>
+            <a :class="{choose:ischoose[2]}" @mouseenter="infosTypeChoose(2)"><img src="../../assets/images/homepage/tab3.png"/>VR硬件</a>
+            <a :class="{choose:ischoose[3]}" @mouseenter="infosTypeChoose(3)"><img src="../../assets/images/homepage/tab4.png"/>虚幻UE4</a>
           </p>
           <div class="slide1" v-for="data in infosType">  
             <div class="slide-left" style="position: relative;">
-              <a style="font-size: 18px;font-family: '微软雅黑';padding: 10px 10px 10px 10px;color: black;">{{data.title}}</a>
+              <a style="font-size: 18px;font-family: '微软雅黑';padding: 10px 10px 0px 10px;color: black;" class="Onerow">{{data.title}}</a>
               <p style="font-size: 15px;color: #888;margin-top: 10px;padding: 10px 10px 0px 10px;" class="Thrrow">{{data.content}}</p>
-              <div style="width: 70%; color: #888; background: ;position: absolute;bottom: 0px;padding: 10px 10px 10px 10px;">
+              <div style="width: 90%; color: #888; background: ;position: absolute;bottom: 0px;padding: 10px 10px 10px 10px;">
                 <a class="qtag">AR|MR</a> 
                     <span style="margin-left: 20px;"> 发布时间：{{data.created_time}}</span>
               <em style="margin-left: 20px;">{{data.pv}}人浏览</em>
@@ -18,7 +21,7 @@
               
             </div>
             <div class="slide-right">
-              <p><img :src="data.img"/></p>
+              <p><img :src="data.thumbnail"/></p>
             </div>
           </div>
           
@@ -96,7 +99,8 @@ export default {
       infosType: [],
       infosTypeQuery: {
         cateId: 1
-      }
+      },
+      ischoose: [true, false, false, false]
     }
   },
   methods: {
@@ -106,6 +110,17 @@ export default {
       }
       this.isShow[index] = true
       this.$forceUpdate()
+    },
+    infosTypeChoose (i) {
+      this.ischoose = [false, false, false, false]
+      this.ischoose[i] = true
+      this.infosTypeQuery.cateId = i + 1
+      this.queryInfosType()
+    },
+    queryInfosType () {
+      infosGetByCateId(this.infosTypeQuery).then(res => {
+        this.infosType = res.data
+      })
     }
   },
   created () {
@@ -113,10 +128,7 @@ export default {
       this.isShow.push(false)
     }
     this.isShow[0] = true
-    infosGetByCateId(this.infosTypeQuery).then(res => {
-      this.infosType = res.data
-      console.log(res)
-    })
+    this.queryInfosType()
   }
 }
 </script>
@@ -138,10 +150,16 @@ export default {
   margin-top: 5px;
 }
 .Thrrow{
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.Onerow{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .main .tab p{
   margin-top: 20px;
@@ -161,7 +179,7 @@ export default {
 .main .tab p a img{
   vertical-align: middle;
 }
-.main .tab p a:hover{
+.main .tab p .choose{
   border-bottom: 2px solid #4691F3;
   color: #4691F3;
 }
