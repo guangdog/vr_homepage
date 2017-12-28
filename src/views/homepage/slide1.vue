@@ -109,6 +109,8 @@ export default {
 			border: 1px solid #EEE;
 		}
 		.main .tab{
+			padding-left: 10px;
+			box-sizing: border-box; 
 			width: 825px;
 			margin-top: 5px;
 		}
@@ -128,7 +130,7 @@ export default {
 			background: white;
 		}
 		.main .right{
-			width: 360px;
+			width: 350px;
 			background: white;
 		}
 		.slide1{
@@ -191,7 +193,7 @@ export default {
 		}
 		.right ul li{
 			padding-left: 5%; 
-			width: 90%;
+			width: 94%;
 			height: 40px;
 			list-style-position:inside;
 		  list-style-type: square;
