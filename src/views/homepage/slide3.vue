@@ -8,6 +8,7 @@
     <div class="bottom">
       <div>
         <div>
+          <div class="main">认识VR</div>
         </div>
       </div>
       <div>
@@ -105,5 +106,42 @@ header a{
 }
 .items>span:last-child{
   margin-left: 10px;
+}
+.main{
+  position: absolute;
+  top: 170px;
+  left: 125px;
+  width: 110px;
+  height: 110px;
+  text-align: center;
+  background-color: #0078d0;
+  border-radius: 50%;
+  z-index: 3;
+  font-size: 22px;
+  color: #fff;
+  padding: 25px;
+  box-sizing: border-box;
+}
+@keyframes sonarEffect {
+  0% {transform: scale(0.9);background: #0078d0;opacity: 0}
+  50% {transform: scale(1.2);opacity: 0.7}
+  100% {transform: scale(0.9);;opacity: 0}
+}
+.main:after {
+  -webkit-animation: sonarEffect infinite 1.3s ease-out 75ms;
+  -moz-animation: sonarEffect infinite 1.3s ease-out 75ms;
+  animation: sonarEffect infinite 1.3s ease-out 75ms;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.9);
 }
 </style>
