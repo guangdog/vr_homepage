@@ -88,7 +88,7 @@ header a{
   width: 100%;
 }
 .li_a{
-	padding: 0 0 10px 0;
+	padding: 0 0 8px 0;
 }
 .li_a:hover{
   width: 100%;
