@@ -1,7 +1,13 @@
 import service from '../utils/service'
-export function getData () {
+export function bannerList () {
   return service({
-    url: '',
+    url: 'banner/list',
+    methods: 'get'
+  })
+}
+export function homeadsList () {
+  return service({
+    url: 'homeads/list',
     methods: 'get'
   })
 }
