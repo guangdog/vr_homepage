@@ -15,7 +15,7 @@
 import topmenu from './menu.vue'
 import topbanner from '../../../components/banner.vue'
 import topadvert from './advert.vue'
-
+import {bannerList} from '../../../api/homepage'
 export default {
   components: {
     topmenu,
@@ -26,11 +26,14 @@ export default {
     return {
       loop: true,
       autoPlay: true,
-      imgData: [
-        {imgUrl: 'https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1785421109,2065966285&fm=85&s=82D675844533358E52249511030080C1'},
-        {imgUrl: 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=170372157,2737566122&fm=85&s=8712426F884F62CC3E9C95670300E063'}
-      ]
+      imgData: []
     }
+  },
+  created () {
+    bannerList().then(res => {
+      this.imgData = res.data.data
+      console.log(this.imgData)
+    })
   }
 }
 </script>
