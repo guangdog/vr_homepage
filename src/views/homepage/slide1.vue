@@ -8,7 +8,7 @@
 	  			</p>
 		  		<div class="slide1" v-for="data in arr">	
 		  			<div class="slide-left" style="position: relative;">
-		  				<a style="font-size: 18px;font-family: '微软雅黑';padding: 10px 10px 10px 10px;">{{data.title}}</a>
+		  				<a style="font-size: 18px;font-family: '微软雅黑';padding: 10px 10px 10px 10px;color: black;">{{data.title}}</a>
 		  				<p style="font-size: 15px;color: #888;margin-top: 10px;padding: 10px 10px 10px 10px;">{{data.content}}</p>
 		  				<div style="width: 70%; color: #888; background: ;position: absolute;bottom: 0px;padding: 10px 10px 10px 10px;">
 		  					<a class="qtag">AR|MR</a> 
@@ -31,11 +31,13 @@
 	  		</div>
 	
 	  			<ul class="weekly-list" v-for="(data,index) in arr">
-	  				<li style="height: 50px;line-height: 50px; list-style-type: square;">
-							<div class="app-show-title">
-								<a>{{data.title}}</a>  
-							</div>		
-						</li>
+	  				<li style=" ">
+						<div class="app-show-title" >
+							<p class="head">{{data.title}}</p> 
+							<p style="color: #666;margin-top: 5px;">浏览：{{data.liulan}}<span style="float: right;margin-right: 12px;">{{data.time}}</span></p>
+							<p><img :src="data.img" style="width:220px;height: 80px;margin-top: 5px;" /></p>
+						</div>		
+					</li>
 	  			</ul>
 				
 				<div class="qhead_tit">
@@ -48,7 +50,7 @@
 								<a>{{data.title}}</a>  
 							</div>		
 						</li>
-	  			</ul>
+	  				</ul>
 	  	</div>
 
 	 </div>
@@ -197,15 +199,31 @@ export default {
 .right ul li{
 	padding-left: 5%; 
 	width: 94%;
-	height: 40px;
+	height: 140px;
 	list-style-position:inside;
-	list-style-type: square;
 	color: red;
-	padding: 5px 5px;
+	padding: 5px 5px 5px 5px;
 }
-.weekly-list li .app-show-title {
-font-size: 14px;
-	padding: 0 9px; 
+.weekly-list .app-show-title{
+	width: 84%;
+	height: 110px;
+	padding: 10px 10px 30px 30px;
+	background-position:5% 13%;
+	background-image:url(../../assets/images/homepage/dot.png);
+	background-repeat:no-repeat;
+	/*border: 1px solid green;*/
+}
+.weekly-list .app-show-title:hover{
+	background: #f4f4f4;
+	padding: 10px 10px 30px 30px;
+	background-position:5% 13%;
+	background-image:url(../../assets/images/homepage/dot.png);
+	background-repeat:no-repeat;
+}
+
+
+.weekly-list2 li{
+	background: white;
 }
 .weekly-list2 li:hover{
 	height: 40px;
