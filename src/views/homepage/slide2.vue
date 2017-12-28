@@ -3,7 +3,6 @@
         <div class="rank_box">
             <h4 class="rank_boxh41">
                 <i><img src="../../assets/images/homepage/rank1.png" /></i>
-                
                 <a href="http://www.52vr.com/forum/unreal">虚幻UE4</a>
             </h4>
             <div class="rank_box_list">
@@ -27,11 +26,9 @@
                 </ul>
             </div>
         </div>
-        
         <div class="rank_box">
             <h4 class="rank_boxh42">
                 <i><img src="../../assets/images/homepage/rank2.png" /></i>
-                
                 <a href="http://www.52vr.com/forum/hololens">AR-Hololens</a>
             </h4>
             <div class="rank_box_list">
@@ -55,11 +52,9 @@
                 </ul>
             </div>
         </div>
-        
         <div class="rank_box">
             <h4 class="rank_boxh43">
                 <i><img src="../../assets/images/homepage/rank3.png" /></i>
-                
                 <a href="http://www.52vr.com/forum/unity">Unity</a>
             </h4>
             <div class="rank_box_list">
@@ -83,11 +78,9 @@
                 </ul>
             </div>
         </div>
-        
         <div class="rank_box">
             <h4 class="rank_boxh44">
                 <i><img src="../../assets/images/homepage/rank4.png" /></i>
-                
                 <a href="http://www.52vr.com/forum/models">模型库</a>
             </h4>
             <div class="rank_box_list">
@@ -111,10 +104,8 @@
                 </ul>
             </div>
         </div>
-        
     </div>
 </template>
-
 <script>
 export default{
   data () {
@@ -132,14 +123,12 @@ export default{
   }
 }
 </script>
-
 <style scoped>
     .ranking_list{
         display: flex;
         width: 1190px;
         margin: 30px auto 15px;
         justify-content: space-between;
-        
     }
     .ranking_list .rank_box{
         width: 24%;
@@ -213,7 +202,6 @@ export default{
         height: 16px;
         border-top: 1px dashed #EDEDED;
         background: #fff;
-        
     }
     .rank_box_tit span{
         display: block;
