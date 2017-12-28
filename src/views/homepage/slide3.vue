@@ -98,7 +98,7 @@ header a{
 .items{
 	padding-left: 20px;
   margin: 6px 0;
-  padding: 15px 0 0 0;
+  padding: 11px 0 0 0;
 }
 .items p{
   background: url(../../assets/images/homepage/dot.png) left center no-repeat;
