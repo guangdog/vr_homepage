@@ -124,7 +124,7 @@ header a{
 }
 @keyframes sonarEffect {
   0% {transform: scale(0.9);background: #0078d0;opacity: 0}
-  50% {transform: scale(1.2);opacity: 0.7}
+  50% {transform: scale(1.2);opacity: 0.6}
   100% {transform: scale(0.9);;opacity: 0}
 }
 .main:after {
