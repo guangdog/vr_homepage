@@ -50,11 +50,8 @@
 						</li>
 	  			</ul>
 	  	</div>
-	  	
-	  	
-	  
-	  </div>
-	  
+
+	 </div>
 	  <div class="bottom">
 	  		<div><img src="../../assets/images/homepage/tab5.png"/></div>
 	  		<div><img src="../../assets/images/homepage/tab6.png"/></div>
@@ -77,9 +74,6 @@
 			<div><img src="../../assets/images/homepage/slide18.png"/><span><a>[VR模型库]航空母舰中国瓦良格</a></span></div>
    		</div>
 	</div>
-  
-  
-  
   
 </template>
 <script>
@@ -119,9 +113,7 @@ export default {
 	
 }
 .main .tab p{
-	/*margin-left: 20px;*/
 	margin-top: 20px;
-
 }
 .main .tab p a{
 	width: 90px;
