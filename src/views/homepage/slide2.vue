@@ -8,11 +8,13 @@
             </h4>
             <div class="rank_box_list">
                 <ul class="rank_box_ul">
-                    <li class="current" style="height: 207px; display: list-item;" v-for="dates in arr">
+                    <li class="current" style="height: 207px; display: list-item;" v-for="(dates,index) in arr">
                         <div class="rank-show-title">
                             <a href="http://www.52vr.com/thread-36723-1-1.html">
-                                <div class="rank_box_tit" >
-                                    <p>{{dates.tname}}</p>
+                                <div class="rank_box_tit">
+                                	<div class="ones">{{index+1}}</div>
+                                    <span>{{dates.tname}}</span>
+                                    <div class="two">{{dates.aaa}}</div>
                                 </div>
                             </a>
                         </div>
@@ -34,11 +36,13 @@
             </h4>
             <div class="rank_box_list">
                 <ul class="rank_box_ul">
-                    <li class="current" style="height: 207px; display: list-item;" v-for="dates in arr">
+                    <li class="current" style="height: 207px; display: list-item;" v-for="(dates,index) in arr">
                         <div class="rank-show-title">
                             <a href="http://www.52vr.com/thread-36723-1-1.html">
                                 <div class="rank_box_tit">
-                                    <p>{{dates.tname}}</p>
+                                	<div class="ones">{{index+1}}</div>
+                                    <span>{{dates.tname}}</span>
+                                    <div class="two">{{dates.aaa}}</div>
                                 </div>
                             </a>
                         </div>
@@ -60,11 +64,13 @@
             </h4>
             <div class="rank_box_list">
                 <ul class="rank_box_ul">
-                    <li class="current" style="height: 207px; display: list-item;"  v-for="dates in arr">
+                    <li class="current" style="height: 207px; display: list-item;"  v-for="(dates,index) in arr">
                         <div class="rank-show-title">
                             <a href="http://www.52vr.com/thread-36723-1-1.html">
                                 <div class="rank_box_tit">
-                                    <p>{{dates.tname}}</p>
+                                	<div class="ones">{{index+1}}</div>
+                                    <span>{{dates.tname}}</span>
+                                    <div class="two">{{dates.aaa}}</div>
                                 </div>
                             </a>
                         </div>
@@ -86,11 +92,13 @@
             </h4>
             <div class="rank_box_list">
                 <ul class="rank_box_ul">
-                    <li class="current" style="height: 207px; display: list-item;" v-for="dates in arr">
+                    <li class="current" style="height: 207px; display: list-item;" v-for="(dates,index) in arr">
                         <div class="rank-show-title">
                             <a href="http://www.52vr.com/thread-36723-1-1.html">
                                 <div class="rank_box_tit">
-                                    <p>{{dates.tname}}</p>
+                                	<div class="ones">{{index+1}}</div>
+                                    <span>{{dates.tname}}</span>
+                                    <div class="two">{{dates.aaa}}</div>
                                 </div>
                             </a>
                         </div>
@@ -112,13 +120,13 @@ export default{
   data () {
     return {
       arr: [
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'},
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'},
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'},
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'},
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'},
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'},
-        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg'}
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '321'},
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '12'},
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '11'},
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '32'},
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '22'},
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '44'},
+        {tname: '虚幻氪金VR逆袭', timg: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', aaa: '66'}
       ]
     }
   }
@@ -130,7 +138,7 @@ export default{
         display: flex;
         width: 1190px;
         margin: 30px auto 15px;
-        justify-content: space-around;
+        justify-content: space-between;
         
     }
     .ranking_list .rank_box{
@@ -206,6 +214,36 @@ export default{
         height: 16px;
         border-top: 1px dashed #EDEDED;
         background: #fff;
+        
+    }
+    .rank_box_tit span{
+        display: block;
+        height: 16px;
+        line-height: 16px;
+        margin-left: 20px;
+        width: 65%;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+    }
+    .rank_box_tit .ones{
+        color: #fff;
+        display: block;
+        height: 16px;
+        width: 16px;
+        border-radius: 3px;
+        float: left;
+        text-align: center;
+        background: #75d09f;
+    }
+    .rank_box_tit .two{
+        width: 20%;
+        text-align: center;
+        float: right;
+        height: 16px;
+        overflow: hidden;
+        font-weight: normal;
+        color: #75d09f;;
     }
     .rank_box_ul li{
         line-height: 47px;
@@ -220,5 +258,12 @@ export default{
     }
     .rank-show-block{
         border-bottom: 1px dashed #EDEDED;
+    }
+    .rank-show-block a img{
+    	width: 100%;
+    }
+    .current{
+    	background: #FFFFFF;
+    	padding: 0 10px;
     }
 </style>
