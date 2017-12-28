@@ -1,20 +1,20 @@
 <template>
   <div class="advert">
-    <img v-for="(item,index) in arr" :key="index" :src="item.img">
+    <img v-for="(item,index) in arr" :key="index" :src="item.url">
   </div>
 </template>
 <script>
-
+import {homeadsList} from '../../../api/homepage'
 export default {
   data () {
     return {
-      arr: [
-        {img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1644077758,3194768429&fm=200&gp=0.jpg'},
-        {img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1644077758,3194768429&fm=200&gp=0.jpg'},
-        {img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1644077758,3194768429&fm=200&gp=0.jpg'},
-        {img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1644077758,3194768429&fm=200&gp=0.jpg'}
-      ]
+      arr: []
     }
+  },
+  created () {
+    homeadsList().then(res => {
+      this.arr = res.data.data
+    })
   }
 }
 </script>
