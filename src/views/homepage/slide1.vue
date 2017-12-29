@@ -33,12 +33,12 @@
           <a>最新资讯</a>
         </div>
   
-          <ul class="weekly-list" v-for="(data,index) in arr" @mouseenter="showItem(index)">
+          <ul class="weekly-list" v-for="(data,index) in newInfos" @mouseenter="showItem(index)">
             <li style="line-height: 40px; ">
             <div class="app-show-title" >
               <p class="head">{{data.title}}</p> 
-              <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;">浏览：{{data.liulan}}<span style="float: right;margin-right: 12px;">{{data.time}}</span></p>
-              <p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.img" style="width:220px;height: 120px;margin-top: 5px;" /></p>
+              <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
+              <p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.thumbnail" style="width:220px;height: 120px;margin-top: 5px;" /></p>
             </div>    
           </li>
           </ul>
@@ -47,7 +47,7 @@
             <a>最新讨论</a>
           </div>
         
-          <ul class="weekly-list2" v-for="(data,index) in arr" >
+          <ul class="weekly-list2" v-for="(data,index) in bbsList" >
             <li style="height: 40px;line-height: 40px; list-style-type: square;">
               <div class="app-show-title">
                 <a>{{data.title}}</a>  
@@ -82,30 +82,24 @@
   
 </template>
 <script>
-import {infosGetByCateId} from '../../api/homepage'
+import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit} from '../../api/homepage'
 export default {
   data () {
     return {
-      arr: [
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'},
-        {'title': '谷歌发表“移动AR设计的最佳做法”', 'content': '谷歌的探索说明了他们是如何调整沉 浸式图形内容以处理适应不同的物理环境和在整个应用会话期间握持手机的需求', 'img': 'https://ss1.baidu.com/6OZ1bjeh1BF3odCf/it/u=2735107996,2635181529&fm=20', 'time': '2017-12-20', 'liulan': '81'}
-      ],
       isShow: [],
       infosType: [],
+      newInfos: [],
+      bbsList: [],
       infosTypeQuery: {
-        cateId: 1
+        cateId: 1,
+        limit: 7
       },
       ischoose: [true, false, false, false]
     }
   },
   methods: {
     showItem (index) {
-      for (let item in this.arr) {
+      for (let item in this.newInfos) {
         this.isShow[item] = false
       }
       this.isShow[index] = true
@@ -118,13 +112,22 @@ export default {
       this.queryInfosType()
     },
     queryInfosType () {
+      // 根据分类id获取资讯
       infosGetByCateId(this.infosTypeQuery).then(res => {
-        this.infosType = res.data
+        this.infosType = res.data.data
+      })
+      // 最新资讯
+      infosGetByLimit({limit: 12}).then(res => {
+        this.newInfos = res.data.data
+      })
+      // 最新讨论
+      bbsinfosGetByLimit({limit: 10}).then(res => {
+        this.bbsList = res.data.data
       })
     }
   },
   created () {
-    for (var i = 0; i < this.arr.length; i++) {
+    for (var i = 0; i < this.newInfos.length; i++) {
       this.isShow.push(false)
     }
     this.isShow[0] = true
@@ -133,6 +136,12 @@ export default {
 }
 </script>
 <style scoped>
+.head, .noneshow{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .main{
   width: 1190px;
   display: flex;
@@ -263,7 +272,6 @@ export default {
   background-position: 18px 18px;
   background-image:url(../../assets/images/homepage/dot.png);
   background-repeat:no-repeat;
-  /*border: 1px solid green;*/
 }
 .weekly-list .app-show-title:hover{
   background: #f4f4f4;
@@ -272,8 +280,6 @@ export default {
   background-image:url(../../assets/images/homepage/dot.png);
   background-repeat:no-repeat;
 }
-
-
 .weekly-list2 li{
   background: white;
 }
@@ -324,7 +330,6 @@ li>div{
   width: 90px;
   height: 20px;
   padding: 10px 20px;
-  background: ;
   font-size: 14px;
 }
 .enlarge p a:hover{
