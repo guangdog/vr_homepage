@@ -21,3 +21,19 @@ export function infosGetByCateId (params) {
     params
   })
 }
+// 最新资讯
+export function infosGetByLimit (params) {
+  return service({
+    url: 'infos/list',
+    methods: 'get',
+    params
+  })
+}
+// 最新讨论
+export function bbsinfosGetByLimit (params) {
+  return service({
+    url: 'bbsinfos/list',
+    methods: 'get',
+    params
+  })
+}
