@@ -8,7 +8,51 @@
     <div class="bottom">
       <div>
         <div>
-          <div class="main">认识VR</div>
+          <a href="#" class="main">认识VR</a>
+          <a href="#" class="icon icon1">
+            <span></span>
+            <i>认识AR|MR</i>
+          </a>
+          <a href="#" class="icon icon2">
+            <span></span>
+            <i>MR开发入门</i>
+          </a>
+          <a href="#" class="icon icon3">
+            <span></span>
+            <i>开发指引</i>
+          </a>
+          <a href="#" class="icon icon4">
+            <span></span>
+            <i>VR硬件入门</i>
+          </a>
+          <a href="#" class="icon icon5">
+            <span></span>
+            <i>VR引擎开发</i>
+          </a>
+          <a href="#" class="icon icon6">
+            <span></span>
+            <i>VR头显入门</i>
+          </a>
+          <a href="#" class="icon icon7">
+            <span></span>
+            <i>VR外设入门</i>
+          </a>
+          <a href="#" class="icon icon8">
+            <span></span>
+            <i>Untiy入门</i>
+          </a>
+          <a href="#" class="icon icon9">
+            <span></span>
+            <i>CryEngine</i>
+          </a>
+          <a href="#" class="icon icon10">
+            <span></span>
+            <i>Unreal入门</i>
+          </a>
+          <a href="#" class="icon icon11">
+            <span></span>
+            <i>配套技术介绍</i>
+          </a>
         </div>
       </div>
       <div>
@@ -143,5 +187,131 @@ header a{
   width: 100%;
   height: 100%;
   transform: scale(0.9);
+}
+.icon{
+  width: 60px;
+  height: 60px;
+  display: block;
+  position: absolute;
+}
+.icon span{
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #0078d0;
+  border-radius: 50%;
+  -webkit-transition: 0.8s !important;
+  background: url(http://www.52vr.com/template/qu_business/img/ico-flowchart.png) 0 0 no-repeat; 
+}
+.icon i{
+  left: -15px;
+  width: 90px;
+  display: block;
+  position: absolute;
+  top: 65px;
+  font-size: 12px;
+  color: #0078d0;
+  text-align: center;
+}
+.icon1{
+  top: 352px;
+  left: 150px;
+}
+
+.icon2{
+  top: 352px;
+  left: 305px;
+}
+.icon2 span{
+  background-position: -60px 0;  
+}
+
+.icon3{
+  top: 203px;
+  left: 356px;
+}
+.icon3 span{
+  background-position: -120px 0;  
+}
+
+.icon4{
+  top: 108px;
+  right: 345px;
+}
+.icon4 span{
+  background-position: 0 -120px;
+}
+
+.icon5{
+  top: 316px;
+  right: 345px;
+}
+.icon5 span{
+  background-position: -60px -120px; 
+}
+
+.icon6{
+  top: 70px;
+  right: 174px;
+}
+.icon6 i,.icon7 i,.icon8 i,.icon9 i{
+  width: 80px;
+  top: 55px;
+}
+.icon6 span{
+  background-position: -125px -125px;
+  width: 50px;
+  height: 50px;
+}
+
+.icon7{
+  top: 150px;
+  right: 174px;
+}
+.icon7 span{
+  background-position: -185px -125px;
+  width: 50px;
+  height: 50px;
+}
+
+.icon8{
+  top: 272px;
+  right: 174px;
+}
+.icon8 span{
+  background-position: -245px -125px;
+  width: 50px;
+  height: 50px;
+}
+
+.icon9{
+  top: 272px;
+  right: 96px;
+}
+.icon9 span{
+  background-position: -245px -239px;
+  width: 50px;
+  height: 50px;
+}
+
+.icon10{
+  top: 362px;
+  right: 174px;
+}
+.icon10 span{
+  background-position: -186px -8px;
+  width: 50px;
+  height: 50px;
+}
+
+.icon11{
+  top: 362px;
+  right: 96px;
+}
+.icon11 span{
+  background-position: -244px -11px;
+  width: 50px;
+  height: 50px;
 }
 </style>
