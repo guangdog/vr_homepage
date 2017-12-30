@@ -1,7 +1,9 @@
 <template>
   <div class="top">
     <div class="left">
-      <topmenu></topmenu>
+      <div>
+        <topmenu></topmenu>
+      </div>
       <div class="banner">
         <topbanner :arr="imgData"></topbanner>
       </div>
@@ -44,11 +46,22 @@ export default {
     justify-content: space-between;
   }
   .left{
-    width: 74.9%;
-    display: flex;
+    position: relative;
+    width: 890px;
+    height: 360px;
+  }
+  .left>div:first-child{
+    width: 100%;
+  }
+  .left>div:last-child{
+    width: 640px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
   }
   .right{
-    width: 24.9%;
+    width: 296px;
   }
   .banner{
     width: calc(100% - 250px);
