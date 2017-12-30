@@ -33,22 +33,22 @@
           <a>最新资讯</a>
         </div>
   
-          <ul class="weekly-list" v-for="(data,index) in newInfos" @mouseenter="showItem(index)">
-            <li style="line-height: 40px; ">
-            <div class="app-show-title" >
-              <p class="head">{{data.title}}</p> 
-              <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
-              <p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.thumbnail" style="width:220px;height: 120px;margin-top: 5px;" /></p>
-            </div>    
-          </li>
+          <ul class="weekly-list" >
+            <li style="line-height: 40px; " v-for="(data,index) in newInfos" @mouseenter="showItem(index)">
+              <div class="app-show-title" >
+                <p class="head">{{data.title}}</p> 
+                <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
+                <p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.thumbnail" style="width:220px;height: 120px;margin-top: 5px;" /></p>
+              </div>    
+            </li>
           </ul>
         
         <div class="qhead_tit">
             <a>最新讨论</a>
           </div>
         
-          <ul class="weekly-list2" v-for="(data,index) in bbsList" >
-            <li style="height: 40px;line-height: 40px; list-style-type: square;">
+          <ul class="weekly-list2" >
+            <li style="height: 40px;line-height: 40px;" v-for="(data,index) in bbsList" >
               <div class="app-show-title">
                 <a>{{data.title}}</a>  
               </div>    
@@ -119,6 +119,9 @@ export default {
       // 最新资讯
       infosGetByLimit({limit: 12}).then(res => {
         this.newInfos = res.data.data
+        for (let index in this.newInfos) {
+          this.newInfos[index].update_time = this.newInfos[index].update_time.substr(0, 10)
+        }
       })
       // 最新讨论
       bbsinfosGetByLimit({limit: 10}).then(res => {
@@ -282,6 +285,18 @@ export default {
 }
 .weekly-list2 li{
   background: white;
+}
+.weekly-list2 li>div{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  background-position: 0px 18px;
+  background-image:url(../../assets/images/homepage/dot.png);
+  background-repeat:no-repeat;
 }
 .weekly-list2 li:hover{
   height: 40px;
