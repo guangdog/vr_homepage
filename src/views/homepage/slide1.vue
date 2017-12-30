@@ -37,7 +37,7 @@
             <li style="line-height: 40px; " v-for="(data,index) in newInfos" @mouseenter="showItem(index)">
               <div class="app-show-title" >
                 <p class="head">{{data.title}}</p> 
-                <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
+                <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;line-height: 20px;height: 20px;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
                 <p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.thumbnail" style="width:220px;height: 120px;margin-top: 5px;" /></p>
               </div>    
             </li>
@@ -144,6 +144,10 @@ export default {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.head{
+  height: 37px;
+  line-height: 37px;
 }
 .main{
   width: 1190px;
@@ -265,9 +269,6 @@ export default {
 .right ul li{
   padding-left: 5%; 
   width: 94%;
-  list-style-position:inside;
-  color: red;
-  padding: 5px 5px 5px 5px;
 }
 .weekly-list .app-show-title{
   width: 84%;
