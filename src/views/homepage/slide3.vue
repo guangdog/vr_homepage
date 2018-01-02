@@ -210,7 +210,7 @@ header a{
 .icon:hover{
   background: #0078d0;
 }
-.icon span:hover{
+.icon:hover span{
   -webkit-transform: rotate(720deg);
 }
 .icon i{
