@@ -192,9 +192,12 @@ header a{
   width: 60px;
   height: 60px;
   display: block;
+  border-radius: 50%;
   position: absolute;
+  -webkit-transition: 0.8s !important;
 }
 .icon span{
+  box-sizing: border-box;
   display: block;
   position: relative;
   width: 60px;
@@ -204,9 +207,15 @@ header a{
   -webkit-transition: 0.8s !important;
   background: url(http://www.52vr.com/template/qu_business/img/ico-flowchart.png) 0 0 no-repeat; 
 }
+.icon:hover{
+  background: #0078d0;
+}
+.icon span:hover{
+  -webkit-transform: rotate(720deg);
+}
 .icon i{
   left: -15px;
-  width: 90px;
+  width: 80px;
   display: block;
   position: absolute;
   top: 65px;
@@ -218,7 +227,9 @@ header a{
   top: 352px;
   left: 150px;
 }
-
+.icon1:hover span{
+  background-position: 0 -60px;
+}
 .icon2{
   top: 352px;
   left: 305px;
@@ -226,7 +237,9 @@ header a{
 .icon2 span{
   background-position: -60px 0;  
 }
-
+.icon2:hover span{
+  background-position: -60px -60px;
+}
 .icon3{
   top: 203px;
   left: 356px;
@@ -234,7 +247,9 @@ header a{
 .icon3 span{
   background-position: -120px 0;  
 }
-
+.icon3:hover span{
+  background-position: -120px -60px;
+}
 .icon4{
   top: 108px;
   right: 345px;
@@ -242,7 +257,9 @@ header a{
 .icon4 span{
   background-position: 0 -120px;
 }
-
+.icon4:hover span{
+  background-position: 0 -180px;
+}
 .icon5{
   top: 316px;
   right: 345px;
@@ -250,7 +267,9 @@ header a{
 .icon5 span{
   background-position: -60px -120px; 
 }
-
+.icon5:hover span{
+  background-position: -60px -180px;
+}
 .icon6{
   top: 70px;
   right: 174px;
@@ -259,10 +278,17 @@ header a{
   width: 80px;
   top: 55px;
 }
+.icon:nth-child(n+7){
+  width: 50px;
+  height: 50px;
+}
 .icon6 span{
   background-position: -125px -125px;
   width: 50px;
   height: 50px;
+}
+.icon6:hover span{
+  background-position: -125px -185px;
 }
 
 .icon7{
@@ -274,7 +300,9 @@ header a{
   width: 50px;
   height: 50px;
 }
-
+.icon7:hover span{
+  background-position: -185px -185px;
+}
 .icon8{
   top: 272px;
   right: 174px;
@@ -284,7 +312,9 @@ header a{
   width: 50px;
   height: 50px;
 }
-
+.icon8:hover span{
+  background-position: -245px -185px;
+}
 .icon9{
   top: 272px;
   right: 96px;
@@ -294,7 +324,9 @@ header a{
   width: 50px;
   height: 50px;
 }
-
+.icon9:hover span{
+  background-position: -245px -299px;
+}
 .icon10{
   top: 362px;
   right: 174px;
@@ -304,7 +336,9 @@ header a{
   width: 50px;
   height: 50px;
 }
-
+.icon10:hover span{
+  background-position: -186px -68px
+}
 .icon11{
   top: 362px;
   right: 96px;
@@ -314,4 +348,9 @@ header a{
   width: 50px;
   height: 50px;
 }
+.icon11:hover span{
+  background-position: -244px -71px;
+}
+
+
 </style>
