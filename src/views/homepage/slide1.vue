@@ -11,7 +11,7 @@
           </p>
           <div class="slide1" v-for="data in infosType">  
             <div class="slide-left" style="position: relative;">
-              <a style="font-size: 18px;font-family: '微软雅黑';padding: 10px 10px 0px 10px;color: black;" class="Onerow">{{data.title}}</a>
+              <a style="font-size: 18px;font-family: '微软雅黑';padding: 10px 10px 0px 10px;" class="Onerow">{{data.title}}</a>
               <p style="font-size: 15px;color: #888;margin-top: 10px;padding: 10px 10px 0px 10px;" class="Thrrow">{{data.content}}</p>
               <div style="width: 90%; color: #888; background: ;position: absolute;bottom: 0px;padding: 10px 10px 10px 10px;">
                 <a class="qtag">AR|MR</a> 
@@ -149,6 +149,9 @@ export default {
   height: 37px;
   line-height: 37px;
 }
+.head:hover{
+  color: #0078d0;
+}
 .main{
   width: 1190px;
   display: flex;
@@ -172,10 +175,14 @@ export default {
   overflow: hidden;
 }
 .Onerow{
+  color: black;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.Onerow:hover{
+  color: #0078d0;
 }
 .main .tab p{
   margin-top: 20px;
@@ -304,7 +311,7 @@ export default {
   background: #F5F5F5;
 }
 .weekly-list2 li:hover a{
-  color: blue;
+  color: #0078d0;
 }
 li>div{
   display: inline-block;
