@@ -37,8 +37,10 @@
             <li style="line-height: 40px; " v-for="(data,index) in newInfos" @mouseenter="showItem(index)">
               <div class="app-show-title" >
                 <p class="head">{{data.title}}</p> 
-                <p class="noneshow" :class="{isShow: isShow[index]}" style="color: #666;line-height: 20px;height: 20px;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
-                <p class="noneshow" :class="{isShow: isShow[index]}"><img :src="data.thumbnail" style="width:220px;height: 120px;margin-top: 5px;" /></p>
+                <div  class="noneshow" :class="{isShow: isShow[index]}">
+                  <p  style="color: #666;line-height: 20px;height: 20px;">浏览：{{data.pv}}<span style="float: right;margin-right: 12px;">{{data.update_time}}</span></p>
+                  <p><img :src="data.thumbnail" style="width:220px;height: 120px;margin-top: 5px;" /></p>
+                </div>
               </div>    
             </li>
           </ul>
@@ -188,11 +190,11 @@ export default {
   margin-top: 20px;
 }
 .noneshow{
-  transition: all 0.3s;
-  display: none;
+  height: 0px;
+  transition: height .3s;  
 }
 .isShow{
-  display: block;
+  height: 140px;
 }
 .main .tab p a{
   width: 90px;
