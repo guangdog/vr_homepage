@@ -3,19 +3,19 @@
       <slot name="top"></slot>
       <div class="rank_box_list">
           <ul class="rank_box_ul">
-              <li class="current" style=" display: list-item;" v-for="(dates,index) in arr"  @mouseenter="showItem(index)">
+              <li class="current" style=" display: list-item;" v-for="(item,index) in arr"  @mouseenter="showItem(index)">
                   <div class="rank-show-title">
                       <a href="http://www.52vr.com/thread-36723-1-1.html">
                           <div class="rank_box_tit">
                             <div class="ones" :style="{background: color}">{{index+1}}</div>
-                              <span>{{dates.tname}}</span>
-                              <div class="two" :style="{color: color}">{{dates.aaa}}</div>
+                              <span>{{item.title}}</span>
+                              <div class="two" :style="{color: color}">{{item.pv}}</div>
                           </div>
                       </a>
                   </div>
                     <div class="rank-show-block" :class="{isShow: isShow[index]}">
                         <a href="http://www.52vr.com/thread-36723-1-1.html">
-                            <img :src="dates.timg" />
+                            <img :src="item.thumbnail" />
                         </a>
                     </div>
               </li>
@@ -131,7 +131,6 @@ export default{
     width: 65%;
     overflow: hidden;
     float: left;
-    text-align: center;
 }
 .rank_box_tit .ones{
     color: #fff;
@@ -144,7 +143,7 @@ export default{
 }
 .rank_box_tit .two{
     width: 20%;
-    text-align: center;
+    text-align: right;
     float: right;
     height: 16px;
     overflow: hidden;
