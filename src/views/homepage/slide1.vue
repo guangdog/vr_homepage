@@ -79,7 +79,7 @@
       <div><img src="../../assets/images/homepage/slide16.png"/><span><a>游泳馆ar</a></span></div>
       <div><img src="../../assets/images/homepage/slide17.png"/><span><a>[VR模型库]美国五角大楼</a></span></div>
       <div><img src="../../assets/images/homepage/slide18.png"/><span><a>[VR模型库]航空母舰中国瓦良格</a></span></div>
-       </div>
+    </div>
   </div>
   
 </template>
@@ -194,7 +194,7 @@ export default {
   transition: height .3s;  
 }
 .isShow{
-  height: 140px;
+  height: 160px;
 }
 .main .tab p a{
   width: 90px;
