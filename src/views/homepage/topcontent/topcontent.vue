@@ -41,6 +41,7 @@ export default {
 </script>
 <style scoped>
   .top{
+    margin-top: 15px;
     width: 1190px;
     display: flex;
     justify-content: space-between;
