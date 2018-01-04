@@ -35,18 +35,6 @@ export default{
   },
   data () {
     return {
-      arr: [
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '321'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '12'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '11'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '32'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '22'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '44'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '66'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '66'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '66'},
-        {title: '虚幻氪金VR逆袭', thumbnail: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2232321279,3451331718&fm=27&gp=0.jpg', pv: '66'}
-      ],
       dataObj: {
         arr1: [],
         arr2: [],
