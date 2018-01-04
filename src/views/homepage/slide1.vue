@@ -1,13 +1,14 @@
 <template>
   <div>
+    <!-- 资讯 bbsinfos -->
     <div class="main">
       <div class="left">
         <div class="tab">
           <p style="height: 35px;line-height: 35px;">  
-            <a :class="{choose:ischoose[0]}" @mouseenter="infosTypeChoose(0)"><img src="../../assets/images/homepage/tab1.png"/>最新</a>
-            <a :class="{choose:ischoose[1]}" @mouseenter="infosTypeChoose(1)"><img src="../../assets/images/homepage/tab2.png"/>AR增强实现</a>
-            <a :class="{choose:ischoose[2]}" @mouseenter="infosTypeChoose(2)"><img src="../../assets/images/homepage/tab3.png"/>VR硬件</a>
-            <a :class="{choose:ischoose[3]}" @mouseenter="infosTypeChoose(3)"><img src="../../assets/images/homepage/tab4.png"/>虚幻UE4</a>
+            <a :class="{choose:ischoose1[0]}" @mouseenter="infosTypeChoose(0)"><img src="../../assets/images/homepage/tab1.png"/>最新</a>
+            <a :class="{choose:ischoose1[1]}" @mouseenter="infosTypeChoose(1)"><img src="../../assets/images/homepage/tab2.png"/>AR增强实现</a>
+            <a :class="{choose:ischoose1[2]}" @mouseenter="infosTypeChoose(2)"><img src="../../assets/images/homepage/tab3.png"/>VR硬件</a>
+            <a :class="{choose:ischoose1[3]}" @mouseenter="infosTypeChoose(3)"><img src="../../assets/images/homepage/tab4.png"/>虚幻UE4</a>
           </p>
           <div class="slide1" v-for="data in infosType">  
             <div class="slide-left" style="position: relative;">
@@ -18,13 +19,11 @@
                     <span style="margin-left: 20px;"> 发布时间：{{data.created_time}}</span>
               <em style="margin-left: 20px;">{{data.pv}}人浏览</em>
               </div>
-              
             </div>
             <div class="slide-right">
               <p><img :src="data.thumbnail"/></p>
             </div>
           </div>
-          
         </div>
       </div>
       
@@ -32,7 +31,6 @@
         <div class="qhead_tit">
           <a>最新资讯</a>
         </div>
-  
           <ul class="weekly-list" >
             <li style="line-height: 40px; " v-for="(data,index) in newInfos" @mouseenter="showItem(index)">
               <div class="app-show-title" >
@@ -44,11 +42,9 @@
               </div>    
             </li>
           </ul>
-        
         <div class="qhead_tit">
             <a>最新讨论</a>
           </div>
-        
           <ul class="weekly-list2" >
             <li style="height: 40px;line-height: 40px;" v-for="(data,index) in bbsList" >
               <div class="app-show-title">
@@ -59,6 +55,7 @@
       </div>
 
    </div>
+
     <div class="bottom">
         <div><img src="../../assets/images/homepage/tab5.png"/></div>
         <div><img src="../../assets/images/homepage/tab6.png"/></div>
@@ -66,25 +63,21 @@
         <div><img src="../../assets/images/homepage/tab8.png"/></div>
         <div><img src="../../assets/images/homepage/tab9.png"/></div>
     </div>
-    
+    <!-- 社区信息 CommunityInfo -->
     <div class="enlarge">
       <p style="height: 10px;line-height: 10px; ">  
-        <a>VR外包</a>    <a>VR案例</a>    <a>VR硬件</a>    <a>VR源码</a>
+        <a :class="{choose:ischoose2[0]}" @mouseenter="CommunityInfo(0)">VR外包</a> 
+        <a :class="{choose:ischoose2[1]}" @mouseenter="CommunityInfo(1)">VR案例</a>
+        <a :class="{choose:ischoose2[2]}" @mouseenter="CommunityInfo(2)">VR硬件</a>
+        <a :class="{choose:ischoose2[3]}" @mouseenter="CommunityInfo(3)">VR源码</a>
       </p>
-      <div><img src="../../assets/images/homepage/slide11.png"/><span><a>[VR模型库]数字城市模型集合</a></span></div>
-      <div><img src="../../assets/images/homepage/slide12.png"/><span><a>[VR]工地安全教育</a></span></div>
-      <div><img src="../../assets/images/homepage/slide13.png"/><span><a>AR车辆互动</a></span></div>
-      <div><img src="../../assets/images/homepage/slide14.png"/><span><a>最新作品展示</a></span></div>
-      <div><img src="../../assets/images/homepage/slide15.png"/><span><a>最新案例</a></span></div>
-      <div><img src="../../assets/images/homepage/slide16.png"/><span><a>游泳馆ar</a></span></div>
-      <div><img src="../../assets/images/homepage/slide17.png"/><span><a>[VR模型库]美国五角大楼</a></span></div>
-      <div><img src="../../assets/images/homepage/slide18.png"/><span><a>[VR模型库]航空母舰中国瓦良格</a></span></div>
+      <div v-for="item in communityArr"><img :src="item.thumbnail"/><span><a>{{item.title}}</a></span></div>
     </div>
   </div>
   
 </template>
 <script>
-import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit} from '../../api/homepage'
+import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit, bbsinfosListByPage} from '../../api/homepage'
 export default {
   data () {
     return {
@@ -96,7 +89,9 @@ export default {
         cateId: 1,
         limit: 7
       },
-      ischoose: [true, false, false, false]
+      communityArr: [],
+      ischoose1: [false, false, false, false],
+      ischoose2: [false, false, false, false]
     }
   },
   methods: {
@@ -107,17 +102,31 @@ export default {
       this.isShow[index] = true
       this.$forceUpdate()
     },
+    // 根据分类id获取资讯
     infosTypeChoose (i) {
-      this.ischoose = [false, false, false, false]
-      this.ischoose[i] = true
+      this.ischoose1 = [false, false, false, false]
+      this.ischoose1[i] = true
       this.infosTypeQuery.cateId = i + 1
-      this.queryInfosType()
-    },
-    queryInfosType () {
-      // 根据分类id获取资讯
       infosGetByCateId(this.infosTypeQuery).then(res => {
         this.infosType = res.data.data
       })
+    },
+    // 查询根据id社区信息
+    CommunityInfo (i) {
+      this.ischoose2 = [false, false, false, false]
+      this.ischoose2[i] = true
+      var id = i === 0 ? 16 : i === 1 ? 33 : i === 2 ? 15 : 11
+      var listQuery = {
+        page: 1,
+        limit: 8,
+        category_id: id
+      }
+      bbsinfosListByPage(listQuery).then(res => {
+        this.communityArr = res.data.data
+      })
+    },
+    // 查询最新资讯、最新讨论数据
+    queryInfosType () {
       // 最新资讯
       infosGetByLimit({limit: 12}).then(res => {
         this.newInfos = res.data.data
@@ -136,7 +145,9 @@ export default {
       this.isShow.push(false)
     }
     this.isShow[0] = true
+    this.infosTypeChoose(0)
     this.queryInfosType()
+    this.CommunityInfo(0)
   }
 }
 </script>
@@ -357,7 +368,7 @@ li>div{
   padding: 10px 20px;
   font-size: 14px;
 }
-.enlarge p a:hover{
+.enlarge p .choose{
   border-bottom: 2px solid #4691F3;
   color: #4691F3;
 }
