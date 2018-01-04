@@ -166,7 +166,6 @@ export default{
 }
 .rank_box_ul li .isShow{
   height: 160px;
-
 }
 .rank-show-block{
     height: 0px;    
