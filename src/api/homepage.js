@@ -13,6 +13,13 @@ export function homeadsList () {
     methods: 'get'
   })
 }
+// 友情链接
+export function homelinks () {
+  return service({
+    url: 'homelinks/list',
+    methods: 'get'
+  })
+}
 // 通过分类ID获取所有资讯
 export function infosGetByCateId (params) {
   return service({
@@ -33,6 +40,14 @@ export function infosGetByLimit (params) {
 export function bbsinfosGetByLimit (params) {
   return service({
     url: 'bbsinfos/list',
+    methods: 'get',
+    params
+  })
+}
+// 帖子按照分类查询
+export function bbsinfosListByPage (params) {
+  return service({
+    url: 'bbsinfos/listByPage',
     methods: 'get',
     params
   })
