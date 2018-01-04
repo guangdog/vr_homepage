@@ -35,6 +35,7 @@
         border-top: 1px solid #EDEDED;
         line-height: 1.5;
         color: #666;
+        overflow: hidden;
     }
     .wp {
         width: 1190px;
