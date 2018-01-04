@@ -34,7 +34,6 @@ export default {
   created () {
     bannerList().then(res => {
       this.imgData = res.data.data
-      console.log(this.imgData)
     })
   }
 }
