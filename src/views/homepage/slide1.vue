@@ -43,15 +43,15 @@
             </li>
           </ul>
         <div class="qhead_tit">
-            <a>最新讨论</a>
-          </div>
-          <ul class="weekly-list2" >
-            <li style="height: 40px;line-height: 40px;" v-for="(data,index) in bbsList" >
-              <div class="app-show-title">
-                <a>{{data.title}}</a>  
-              </div>    
-            </li>
-            </ul>
+          <a>最新讨论</a>
+        </div>
+        <ul class="weekly-list2" >
+          <li style="height: 40px;line-height: 40px;" v-for="(data,index) in bbsList" >
+            <div class="app-show-title">
+              <a>{{data.title}}</a>  
+            </div>    
+          </li>
+        </ul>
       </div>
 
    </div>
@@ -71,14 +71,24 @@
         <a :class="{choose:ischoose2[2]}" @mouseenter="CommunityInfo(2)">VR硬件</a>
         <a :class="{choose:ischoose2[3]}" @mouseenter="CommunityInfo(3)">VR源码</a>
       </p>
-      <div v-for="item in communityArr"><img :src="item.thumbnail"/><span><a>{{item.title}}</a></span></div>
+      <div style="width: 100%;height:10px"></div>
+      <div class="showcontent">
+        <communityInfo v-show="ischoose2[0]" :id="16"></communityInfo>
+        <communityInfo v-show="ischoose2[1]" :id="33"></communityInfo>
+        <communityInfo v-show="ischoose2[2]" :id="15"></communityInfo>
+        <communityInfo v-show="ischoose2[3]" :id="11"></communityInfo>
+      </div>
     </div>
   </div>
   
 </template>
 <script>
-import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit, bbsinfosListByPage} from '../../api/homepage'
+import communityInfo from './slide1/communityInfo'
+import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit} from '../../api/homepage'
 export default {
+  components: {
+    communityInfo
+  },
   data () {
     return {
       isShow: [],
@@ -89,9 +99,14 @@ export default {
         cateId: 1,
         limit: 7
       },
-      communityArr: [],
+      communityObj: {
+        arr1: [],
+        arr2: [],
+        arr3: [],
+        arr4: []
+      },
       ischoose1: [false, false, false, false],
-      ischoose2: [false, false, false, false]
+      ischoose2: [true, false, false, false]
     }
   },
   methods: {
@@ -115,17 +130,8 @@ export default {
     CommunityInfo (i) {
       this.ischoose2 = [false, false, false, false]
       this.ischoose2[i] = true
-      var id = i === 0 ? 16 : i === 1 ? 33 : i === 2 ? 15 : 11
-      var listQuery = {
-        page: 1,
-        limit: 8,
-        category_id: id
-      }
-      bbsinfosListByPage(listQuery).then(res => {
-        this.communityArr = res.data.data
-      })
     },
-    // 查询最新资讯、最新讨论数据
+    // 查询信息
     queryInfosType () {
       // 最新资讯
       infosGetByLimit({limit: 12}).then(res => {
@@ -147,7 +153,6 @@ export default {
     this.isShow[0] = true
     this.infosTypeChoose(0)
     this.queryInfosType()
-    this.CommunityInfo(0)
   }
 }
 </script>
@@ -157,6 +162,9 @@ export default {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.showcontent{
+  width: 100%;
 }
 .head{
   height: 37px;
@@ -350,7 +358,7 @@ li>div{
 }
 .enlarge{
   width: 1188px;
-  height: 488px;
+  height: 478px;
   background: white;
   margin: 0 auto;
   margin-top: 20px;
@@ -372,38 +380,5 @@ li>div{
   border-bottom: 2px solid #4691F3;
   color: #4691F3;
 }
-.enlarge div{
-  overflow: hidden;
-  width: 260px;
-  height:170px;
-  margin: 0px 5px 10px 25px;
-  position: relative;
-}
-.enlarge div img{
-  width: 100%;
-  height: 180px;
-  cursor: pointer;  
-  transition: all 0.6s;  
-}
-.enlarge div:hover img{  
-  transform: scale(1.2);  
-}
-.enlarge div:hover a{  
-  background-color:rgba(0,50,150,0.6);
-}
-.enlarge span a{
-  width: 90%;
-    text-align: center;
-    padding: 0 5%;
-    height: 32px;
-    line-height: 32px;
-    position: absolute;
-    z-index: 2;
-    bottom: 0;
-    left: 0;
-    font-size: 14px;
-    color: #fff;
-    background-color:rgba(0,0,0,0.6);
-     overflow: hidden;
-}
+
 </style>
