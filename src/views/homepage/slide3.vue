@@ -8,7 +8,41 @@
     <div class="bottom">
       <div>
         <div>
-          <a href="#" class="main">认识VR</a>
+          <a href="#" :class="{white: isopen,main: !isopen}"  @mouseenter="enter()">认识VR</a>
+          <div class="smDiv" @mouseleave="leave()" :class="{open: isopen}">
+            <a href="#">
+              <span class="shoimg showimg1"></span>
+              <i>htc vive</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg2"></span>
+              <i>psvr</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg3"></span>
+              <i>定位追踪</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg4"></span>
+              <i>交互输入</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg5"></span>
+              <i>oculus</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg6"></span>
+              <i>运动平台</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg7"></span>
+              <i>unity</i>
+            </a>
+            <a href="#">
+              <span class="shoimg showimg8"></span>
+              <i>unreal engine</i>
+            </a>
+          </div>
           <a href="#" class="icon icon1">
             <span></span>
             <i>认识AR|MR</i>
@@ -82,7 +116,16 @@ export default {
         {js: 'VR外设盘点，让VR整体体验更完整!', pl: '15', ll: '22', imgs: 'http://www.52vr.com/data/attachment/block/cc/cc8311ee7f8217fb9953df08d20f4e0b.jpg'},
         {js: 'VR外设盘点，让VR整体体验更完整!', pl: '15', ll: '12', imgs: 'http://www.52vr.com/data/attachment/block/cc/cc8311ee7f8217fb9953df08d20f4e0b.jpg'},
         {js: 'VR外设盘点，让VR整体体验更完整!', pl: '15', ll: '42', imgs: 'http://www.52vr.com/data/attachment/block/cc/cc8311ee7f8217fb9953df08d20f4e0b.jpg'}
-      ]
+      ],
+      isopen: false
+    }
+  },
+  methods: {
+    enter () {
+      this.isopen = true
+    },
+    leave () {
+      this.isopen = false      
     }
   }
 }
@@ -93,6 +136,50 @@ export default {
   height: 520px;
   margin-bottom: 14px;
   background: white;
+}
+.white{
+  background: white !important;
+  color:#0078d0 !important;
+  position: absolute;
+  top: 170px;
+  left: 125px;
+  width: 110px;
+  height: 110px;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 3;
+  font-size: 22px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+.smDiv{
+  width: 320px;
+  height: 320px;
+  top: 65px;
+  left: 20px;
+  position: absolute;
+  background-color: #2874a9;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: scale(0.1) rotate(-270deg);
+  -moz-transform: scale(0.1) rotate(-270deg);
+  -transform: scale(0.1) rotate(-270deg);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.open{
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0);
+  -moz-transform: scale(1) rotate(0);
+  -transform: scale(1) rotate(0);
+}
+.smDiv a i{
+  font-style: normal;
+  font-size: 12px;
 }
 header{
   padding-top: 10px;
@@ -115,6 +202,7 @@ header a{
   width: 100%;
   height: 480px;
   display: flex;
+  position: relative;
 }
 .bottom>div:first-child{
   width: 924px;
@@ -278,7 +366,7 @@ header a{
   width: 80px;
   top: 55px;
 }
-.icon:nth-child(n+7){
+.icon:nth-child(n+8){
   width: 50px;
   height: 50px;
 }
