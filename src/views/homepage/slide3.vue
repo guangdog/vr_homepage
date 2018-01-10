@@ -10,39 +10,42 @@
         <div>
           <a href="#" :class="{white: isopen,main: !isopen}"  @mouseenter="enter()">认识VR</a>
           <div class="smDiv" @mouseleave="leave()" :class="{open: isopen}">
-            <a href="#">
-              <span class="shoimg showimg1"></span>
-              <i>htc vive</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg2"></span>
-              <i>psvr</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg3"></span>
-              <i>定位追踪</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg4"></span>
-              <i>交互输入</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg5"></span>
-              <i>oculus</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg6"></span>
-              <i>运动平台</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg7"></span>
-              <i>unity</i>
-            </a>
-            <a href="#">
-              <span class="shoimg showimg8"></span>
-              <i>unreal engine</i>
-            </a>
+            <div class="n-ring-con">
+              <a href="#" class="n-round-icon n-jyxy">
+                <span class="shoimg showimg1"></span>
+                <i>htc vive</i>
+              </a>
+              <a href="#" class="n-round-icon n-rzxy">
+                <span class="shoimg showimg2"></span>
+                <i>psvr</i>
+              </a>
+              <a href="#" class="n-round-icon n-ksp">
+                <span class="shoimg showimg3"></span>
+                <i>定位追踪</i>
+              </a>
+              <a href="#" class="n-round-icon n-zrfd">
+                <span class="shoimg showimg4"></span>
+                <i>交互输入</i>
+              </a>
+              <a href="#" class="n-round-icon n-qtlx">
+                <span class="shoimg showimg5"></span>
+                <i>oculus</i>
+              </a>
+              <a href="#" class="n-round-icon n-xmdp">
+                <span class="shoimg showimg6"></span>
+                <i>运动平台</i>
+              </a>
+              <a href="#" class="n-round-icon n-zbfd">
+                <span class="shoimg showimg7"></span>
+                <i>unity</i>
+              </a>
+              <a href="#" class="n-round-icon n-zzhd">
+                <span class="shoimg showimg8"></span>
+                <i>unreal engine</i>
+              </a>
+            </div>
           </div>
+
           <a href="#" class="icon icon1">
             <span></span>
             <i>认识AR|MR</i>
@@ -125,12 +128,169 @@ export default {
       this.isopen = true
     },
     leave () {
-      this.isopen = false      
+      this.isopen = false
     }
   }
 }
 </script>
 <style scoped>
+.n-ring-con {
+  width: 234px;
+  height: 234px;
+  position: relative;
+  top: 60px;
+  left: 60px;
+}
+.n-round-icon span {
+  display: inline-block;
+  position: absolute;
+  background: url(http://www.52vr.com/template/qu_business/img/ico-flowchart.png) 0 0 no-repeat;
+}
+.n-round-icon i {
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+}
+.n-round-icon:nth-child(1) {
+  width: 33px;
+  height: 30px;
+  top: 5px;
+  left: 103px;
+}
+.n-jyxy span {
+  width: 32px;
+  height: 33px;
+  background-position: -76px -339px;
+}
+.n-jyxy i {
+  top: -35px;
+  left: -13px;
+  width: 55px;
+  text-align: center;
+}
+.n-round-icon:nth-child(2) {
+  width: 35px;
+  height: 37px;
+  top: 36px;
+  left: 186px;
+}
+.n-rzxy span {
+  width: 35px;
+  height: 37px;
+  background-position: -76px -378px;
+}
+.n-rzxy i {
+  top: 6px;
+  left: 45px;
+  width: 55px;
+  text-align: left;
+}
+.n-round-icon:nth-child(3) {
+  width: 26px;
+  height: 33px;
+  top: 99px;
+  left: 195px;
+}
+.n-ksp span {
+  width: 32px;
+  height: 33px;
+  background-position: -117px -381px;
+}
+.n-ksp i {
+  top: 6px;
+  left: 35px;
+  width: 55px;
+  text-align: left;
+}
+.n-round-icon:nth-child(4) {
+  width: 36px;
+  height: 35px;
+  top: 160px;
+  left: 164px;
+}
+.n-zrfd span {
+  width: 36px;
+  height: 35px;
+  background-position: -34px -339px;
+}
+.n-zrfd i {
+  top: 10px;
+  left: 40px;
+  width: 55px;
+  text-align: left;
+}
+.n-round-icon:nth-child(5) {
+  width: 36px;
+  height: 27px;
+  top: 200px;
+  left: 102px;
+}
+.n-qtlx span {
+  width: 37px;
+  height: 27px;
+  background-position: -118px -344px;
+}
+.n-qtlx i {
+  top: 40px;
+  left: -11px;
+  width: 55px;
+  text-align: center;
+}
+.n-round-icon:nth-child(6) {
+  width: 32px;
+  height: 35px;
+  top: 169px;
+  left: 30px;
+}
+.n-xmdp span {
+  width: 30px;
+  height: 33px;
+  background-position: 1px -339px;
+}
+.n-xmdp i {
+  top: 3px;
+  right: 37px;
+  width: 55px;
+  text-align: right;
+}
+.n-round-icon:nth-child(7) {
+  width: 31px;
+  height: 24px;
+  top: 103px;
+  left: 6px;
+}
+.n-zbfd span {
+  width: 31px;
+  height: 30px;
+  background-position: 1px -385px;
+}
+.n-zbfd i {
+  top: 3px;
+  right: 40px;
+  width: 55px;
+  text-align: right;
+}
+.n-round-icon:nth-child(8) {
+  width: 28px;
+  height: 28px;
+  top: 39px;
+  left: 34px;
+}
+.n-zzhd span {
+  width: 30px;
+  height: 30px;
+  background-position: -166px -342px;
+}
+.n-zzhd i {
+  top: -3px;
+  right: 38px;
+  width: 70px;
+  text-align: right;
+}
+
+.n-round-icon{
+  position: absolute;
+}
 .slide3{
   width: 1190px;
   height: 520px;
@@ -153,10 +313,10 @@ export default {
   box-sizing: border-box;
 }
 .smDiv{
-  width: 320px;
-  height: 320px;
-  top: 65px;
-  left: 20px;
+  width: 354px;
+  height: 354px;
+  top: 50px;
+  left: 0;
   position: absolute;
   background-color: #2874a9;
   border-radius: 50%;
