@@ -4,9 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>HomePage</title>
+    <style>
+      .scrollTop{
+        position: fixed;
+        bottom: 100px;
+        left: 50% !important;
+        margin-left: 600px;
+        visibility: hidden;
+      }
+      .scrollTop a{
+        display: block;
+        width: 44px;
+        height: 43px;
+        background: url(http://www.52vr.com/template/qu_business/style/t4/scrolltop.png);
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
+    <div class="scrollTop">
+      <a onclick="window.scrollTo('0','0')" title="返回顶部"></a>
+    </div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    var toTop = document.querySelector('.scrollTop');
+    window.onscroll = function(){
+      var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+      toTop.style.visibility = scrolltop > 100 ? 'visible' : 'hidden'
+    }
+  </script>
 </html>
