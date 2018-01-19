@@ -5,10 +5,10 @@
       <div class="left">
         <div class="tab">
           <p style="height: 35px;line-height: 35px;">  
-            <a :class="{choose:ischoose1[0]}" @mouseenter="infosTypeChoose(0)"><img src="../../assets/images/homepage/tab1.png"/>最新</a>
-            <a :class="{choose:ischoose1[1]}" @mouseenter="infosTypeChoose(1)"><img src="../../assets/images/homepage/tab2.png"/>AR增强实现</a>
-            <a :class="{choose:ischoose1[2]}" @mouseenter="infosTypeChoose(2)"><img src="../../assets/images/homepage/tab3.png"/>VR硬件</a>
-            <a :class="{choose:ischoose1[3]}" @mouseenter="infosTypeChoose(3)"><img src="../../assets/images/homepage/tab4.png"/>虚幻UE4</a>
+            <a :class="{choose:ischoose1[0]}" @mouseenter="infosTypeChoose(0)"><img src="static/images/homepage/tab1.png"/>最新</a>
+            <a :class="{choose:ischoose1[1]}" @mouseenter="infosTypeChoose(1)"><img src="static/images/homepage/tab2.png"/>AR增强实现</a>
+            <a :class="{choose:ischoose1[2]}" @mouseenter="infosTypeChoose(2)"><img src="static/images/homepage/tab3.png"/>VR硬件</a>
+            <a :class="{choose:ischoose1[3]}" @mouseenter="infosTypeChoose(3)"><img src="static/images/homepage/tab4.png"/>虚幻UE4</a>
           </p>
           <div class="slide1" v-for="data in infosType">  
             <div class="slide-left" style="position: relative;">
@@ -57,11 +57,11 @@
    </div>
 
     <div class="bottom">
-        <div><img src="../../assets/images/homepage/tab5.png"/></div>
-        <div><img src="../../assets/images/homepage/tab6.png"/></div>
-        <div><img src="../../assets/images/homepage/tab7.png"/></div>
-        <div><img src="../../assets/images/homepage/tab8.png"/></div>
-        <div><img src="../../assets/images/homepage/tab9.png"/></div>
+        <div><img src="static/images/homepage/tab5.png"/></div>
+        <div><img src="static/images/homepage/tab6.png"/></div>
+        <div><img src="static/images/homepage/tab7.png"/></div>
+        <div><img src="static/images/homepage/tab8.png"/></div>
+        <div><img src="static/images/homepage/tab9.png"/></div>
     </div>
     <!-- 社区信息 CommunityInfo -->
     <div class="enlarge">
@@ -84,7 +84,7 @@
 </template>
 <script>
 import communityInfo from './slide1/communityInfo'
-import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit} from '../../api/homepage'
+import {infosGetByCateId, infosGetByLimit, bbsinfosGetByLimit} from '@/api/homepage/homepage'
 export default {
   components: {
     communityInfo
@@ -302,14 +302,14 @@ export default {
   width: 84%;
   padding: 0px 10px 0px 30px;
   background-position: 18px 18px;
-  background-image:url(../../assets/images/homepage/dot.png);
+  background-image:url(../../../static/images/homepage/dot.png);
   background-repeat:no-repeat;
 }
 .weekly-list .app-show-title:hover{
   background: #f4f4f4;
   padding: 0px 10px 0px 30px;
   background-position: 18px 18px;
-  background-image:url(../../assets/images/homepage/dot.png);
+  background-image:url(../../../static/images/homepage/dot.png);
   background-repeat:no-repeat;
 }
 .weekly-list2 li{
@@ -324,7 +324,7 @@ export default {
   box-sizing: border-box;
   padding-left: 10px;
   background-position: 0px 18px;
-  background-image:url(../../assets/images/homepage/dot.png);
+  background-image:url(../../../static/images/homepage/dot.png);
   background-repeat:no-repeat;
 }
 .weekly-list2 li:hover{

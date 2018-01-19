@@ -17,7 +17,7 @@
 import topmenu from './menu.vue'
 import topbanner from '../../../components/banner.vue'
 import topadvert from './advert.vue'
-import {bannerList} from '../../../api/homepage'
+import {bannerList} from '../../../api/homepage/homepage'
 export default {
   components: {
     topmenu,

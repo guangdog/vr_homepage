@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import {bbsinfosListByPage} from '../../../api/homepage'
+import {bbsinfosListByPage} from '@/api/homepage/homepage'
 export default {
   props: ['id'],
   data () {

@@ -2,25 +2,25 @@
     <div class="slide2">
         <item :arr="dataObj.arr1" :color="'#75d09f'">
             <h4 class="rank_boxh41" slot="top">
-                <i><img src="../../assets/images/homepage/rank1.png" /></i>
+                <i><img src="static/assets/images/homepage/rank1.png" /></i>
                 <a href="http://www.52vr.com/forum/unreal">虚幻UE4</a>
             </h4>
         </item>
         <item :arr="dataObj.arr2" :color="'#ffb85c'">
              <h4 class="rank_boxh42" slot="top">
-                <i><img src="../../assets/images/homepage/rank2.png" /></i>
+                <i><img src="static/assets/images/homepage/rank2.png" /></i>
                 <a href="http://www.52vr.com/forum/hololens">AR-Hololens</a>
             </h4>
         </item>
         <item :arr="dataObj.arr3" :color="'#ff9066'">
             <h4 class="rank_boxh43" slot="top">
-                <i><img src="../../assets/images/homepage/rank3.png" /></i>
+                <i><img src="static/images/homepage/rank3.png" /></i>
                 <a href="http://www.52vr.com/forum/unity">Unity</a>
             </h4>
         </item>
         <item :arr="dataObj.arr4" :color="'#d6ade7'">
             <h4 class="rank_boxh44" slot="top">
-                <i><img src="../../assets/images/homepage/rank4.png" /></i>
+                <i><img src="static/assets/images/homepage/rank4.png" /></i>
                 <a href="http://www.52vr.com/forum/models">模型库</a>
             </h4>
         </item>
@@ -28,7 +28,7 @@
 </template>
 <script>
 import item from './slide2/item.vue'
-import {bbsinfosListByPage} from '../../api/homepage'
+import {bbsinfosListByPage} from '@/api/homepage/homepage'
 export default{
   components: {
     item

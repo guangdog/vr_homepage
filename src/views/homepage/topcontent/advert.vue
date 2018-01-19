@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import {homeadsList} from '../../../api/homepage'
+import {homeadsList} from '../../../api/homepage/homepage'
 export default {
   data () {
     return {

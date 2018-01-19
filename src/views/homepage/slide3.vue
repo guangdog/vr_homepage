@@ -370,7 +370,7 @@ header a{
   box-sizing: border-box;
   padding: 30px 79px 50px 20px;
   position: relative;
-  background: url('../../assets/images/homepage/flowchart_bg.png') 0 center no-repeat;
+  background: url('../../../static/images/homepage/flowchart_bg.png') 0 center no-repeat;
 }
 .bottom>div:last-child{
   width: 234px;
@@ -393,7 +393,7 @@ header a{
   padding: 11px 0 0 0;
 }
 .items p{
-  background: url(../../assets/images/homepage/dot.png) left center no-repeat;
+  background: url(../../../static/images/homepage/dot.png) left center no-repeat;
   padding-left: 8px;
 }
 .items>span:last-child{

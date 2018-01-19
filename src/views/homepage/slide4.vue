@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import {homelinks} from '../../api/homepage'
+import {homelinks} from '@/api/homepage/homepage'
 export default{
   data () {
     return {
@@ -30,7 +30,7 @@ export default{
     }
   },
   created () {
-    homelinks().then(res => {
+    homelinks({}).then(res => {
       this.arr = res.data.data
     })
   }
@@ -81,7 +81,7 @@ export default{
     display: inline-block;
       width: 100px;
       margin: 5px 8px;
-      background:url(../../assets/images/homepage/dot.png) left center no-repeat;
+      background:url(../../../static/images/homepage/dot.png) left center no-repeat;
       padding-left: 10px;
       float: left;
       text-align:left
