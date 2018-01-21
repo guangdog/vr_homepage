@@ -38,14 +38,7 @@ export default {
   }
 }
 </script>
-<style type="text/css" scoped="scoped">
-  *{
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    list-style: none;
-    text-decoration: none;
-  }
+<style scoped="scoped">
   .box{
     width: 100%;
     box-sizing: border-box;

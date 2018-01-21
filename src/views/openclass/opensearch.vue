@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style scoped="scoped">
+<style scoped>
 	div.search {padding: 30px 0px;}
 	form {
     position: relative;

@@ -16,6 +16,18 @@ import specific from '../views/recruit/homepage/specific/specific'
 import openclass from '../views/openclass/openclass'
 import audiodetails from '../views/openclass/audiodetails/audiodetails'
 import gamesvideo from '../views/openclass/gamesvideo/gamevideo'
+// 书城
+import bookcity from '../views/bookcity/homepage/homepage.vue'
+import booksdetails from '../views/bookcity/details/booksdetails.vue'
+import bookjump from '../views/bookcity/bookjump/bookjump.vue'
+// 资讯
+import vrInformation from '../views/VR-zx/zx.vue'
+import informationList from '../views/VR-zx/VR-zym/list.vue'
+// 社区
+import community from '../views/community/community'
+import communitylist from '../views/community/sq-zym/list'
+import xqy from '../views/community/sq-zym/xqy'
+import addPost from '../views/community/sq-zym/addPost'
 Vue.use(Router)
 
 export default new Router({
@@ -37,7 +49,20 @@ export default new Router({
         // 公开课
         {path: 'openclass', component: openclass},
         {path: 'openclass/audiodetails/:id', component: audiodetails},
-        {path: 'openclass/gamesvideo', component: gamesvideo}
+        {path: 'openclass/gamesvideo', component: gamesvideo},
+        // 书城
+        {path: 'bookcity', component: bookcity},
+        {path: 'bookcity/booksdetails/:id', component: booksdetails},
+        {path: 'bookcity/bookjump/:id', component: bookjump},
+        // 资讯
+        {path: 'vrInformation', component: vrInformation},
+        {path: 'vrInformation/list/:id', component: informationList},
+        // 社区
+        {path: 'community', component: community},
+        {path: 'community/list/:id', component: communitylist},
+        {path: 'community/list/:category_id', component: communitylist},
+        {path: 'community/xqy/:id', component: xqy},
+        {path: 'community/addPost', component: addPost}
       ]
     }
   ]

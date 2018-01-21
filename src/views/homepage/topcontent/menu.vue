@@ -74,7 +74,8 @@ export default {
 <style scoped>
 .menu{
   width: 890px;
-  height: 330px;
+  height: 360px;
+  box-sizing: border-box;
   padding: 15px 0;
   background: rgba(0,0,0,0.78)!important;
   position: relative;

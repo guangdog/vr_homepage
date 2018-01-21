@@ -58,10 +58,10 @@
             <router-link :class="{active: isActive[0]}" to='/pageshow' hidefocus='true' title='首页'>首页</router-link>
           </li>
           <li>
-            <router-link :class="{active: isActive[1]}"  to='/pageshow' hidefocus='true' title='VR资讯'>VR资讯</router-link>
+            <router-link :class="{active: isActive[1]}"  to='/pageshow/vrInformation' hidefocus='true' title='VR资讯'>VR资讯</router-link>
           </li>
           <li>
-            <router-link :class="{active: isActive[2]}"  to='/pageshow' hidefocus='true' title='VR教程'>VR书城</router-link>
+            <router-link :class="{active: isActive[2]}"  to='/pageshow/bookcity' hidefocus='true' title='VR教程'>VR书城</router-link>
           </li>
           <li>
             <router-link :class="{active: isActive[3]}" to='/pageshow/recruit' title='招聘外包'>招聘外包</router-link>
@@ -70,7 +70,7 @@
          	 <router-link :class="{active: isActive[4]}" to='/pageshow/openclass' title='VR公开课'>VR公开课</router-link>
           </li>
           <li>
-            <router-link :class="{active: isActive[5]}" to='/pageshow/openclass' hidefocus='true'  title='VR社区'>VR社区</router-link>
+            <router-link :class="{active: isActive[5]}" to='/pageshow/community' hidefocus='true'  title='VR社区'>VR社区</router-link>
           </li>
         </ul>
       </div>
@@ -132,14 +132,13 @@ export default {
     }
   },
   created () {
-    var type = this.$route.fullPath.substr(this.$route.fullPath.lastIndexOf('/') + 1)
-    type === 'homepage' ? this.isActive[0] = true : type === 'openclass' ? this.isActive[4] = true : type === 'recruit' ? this.isActive[3] = true : console.log('s')
+    var val = this.$route
+    val.fullPath.indexOf('homepage') !== -1 ? this.isActive[0] = true : val.fullPath.indexOf('openclass') !== -1 ? this.isActive[4] = true : val.fullPath.indexOf('recruit') !== -1 ? this.isActive[3] = true : val.fullPath.indexOf('bookcity') !== -1 ? this.isActive[2] = true : val.fullPath.indexOf('vrInformation') !== -1 ? this.isActive[1] = true : this.isActive[5] = true
   },
   watch: {
     $route (val) {
-      var type = val.fullPath.substr(val.fullPath.lastIndexOf('/') + 1)
       this.isActive = [false, false, false, false, false, false]
-      type === 'homepage' ? this.isActive[0] = true : type === 'openclass' ? this.isActive[4] = true : type === 'recruit' ? this.isActive[3] = true : console.log('s')
+      val.fullPath.indexOf('homepage') !== -1 ? this.isActive[0] = true : val.fullPath.indexOf('openclass') !== -1 ? this.isActive[4] = true : val.fullPath.indexOf('recruit') !== -1 ? this.isActive[3] = true : val.fullPath.indexOf('bookcity') !== -1 ? this.isActive[2] = true : val.fullPath.indexOf('vrInformation') !== -1 ? this.isActive[1] = true : this.isActive[5] = true
     }
   }
 }

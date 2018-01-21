@@ -60,7 +60,7 @@ export default {
   }
 }
 </script>
-<style  scoped="scoped">
+<style  scoped>
   *{
     margin:  0  auto;
     padding:  0;

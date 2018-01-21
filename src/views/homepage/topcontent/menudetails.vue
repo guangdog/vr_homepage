@@ -53,7 +53,7 @@ export default {
 </script>
 <style scoped>
 .content{
-  width: 560px;
+  /* width: 560px; */
   height: 318px;
   padding: 20px 40px;
 }
